@@ -6,7 +6,7 @@
 #    By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/21 20:32:25 by seozkan           #+#    #+#              #
-#    Updated: 2023/05/22 22:54:05 by seozkan          ###   ########.fr        #
+#    Updated: 2023/05/23 22:47:12 by seozkan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,10 @@ MAIN_INC	= -I$(INCS_DIR)
 
 CYAN 		= \033[1;36m
 END			= \033[0m
+CLEAR    	= \033[2K
 
 .cpp.o:
-	@ echo "$(CYAN)Compiling: $*\r\c $(END)"
+	@printf "$(CLEAR)$(CYAN)Compiling: $<$(END)\r"
 	@ ${CC} ${CFLAGS} ${MAIN_INC} -c $< -o ${<:.cpp=.o}
 
 all			: $(NAME)

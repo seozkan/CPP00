@@ -5,39 +5,40 @@
 #                                                     +:+ +:+         +:+      #
 #    By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/21 20:32:25 by seozkan           #+#    #+#              #
-#    Updated: 2023/05/23 22:47:42 by seozkan          ###   ########.fr        #
+#    Created: 2023/05/22 23:10:54 by seozkan           #+#    #+#              #
+#    Updated: 2023/05/23 22:46:49 by seozkan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= megaphone
-CC			= c++
-RM			= rm -f
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+NAME     = bank
+CC       = g++
+RM       = rm -rf
+CFLAGS   = -Wall -Wextra -Werror -std=c++98
 
-SRC			=	megaphone.cpp
-OBJ			=	$(SRC:.cpp=.o)
+SRCS     = $(shell find -type f -name "*.cpp")
+OBJS     = $(SRCS:.cpp=.o)
+INCS     = $(shell find -type f -name "*.hpp")
 
-CYAN 		= \033[1;36m
-END			= \033[0m
-CLEAR   	= \033[2K
+CYAN     = \033[1;36m
+END      = \033[0m
+CLEAR    = \033[2K
 
 .cpp.o:
 	@printf "$(CLEAR)$(CYAN)Compiling: $<$(END)\r"
-	@ ${CC} ${CFLAGS} -c $< -o ${<:.cpp=.o}
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@ $(CC) -o $(NAME) $(OBJ)
-	@echo "\n${NAME} compiled"
+$(NAME): $(OBJS) $(INCS)
+	@$(CC) $(OBJS) -o $(NAME)
+	@echo "\n$(NAME) compiled"
 
 clean:
-	@ ${RM} $(OBJ)
+	@$(RM) $(OBJS)
 
 fclean: clean
-	@ ${RM} $(NAME)
+	@$(RM) $(NAME)
 
-re: fclean all
+re: clean all
 
 .PHONY: all clean fclean re

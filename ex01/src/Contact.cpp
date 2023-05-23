@@ -6,14 +6,14 @@
 /*   By: seozkan <seozkan@student.42kocaeli.com.tr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:02:23 by seozkan           #+#    #+#             */
-/*   Updated: 2023/05/22 22:14:12 by seozkan          ###   ########.fr       */
+/*   Updated: 2023/05/22 22:56:16 by seozkan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 std::string Contact::truncateString(std::string str,
-									std::string::size_type maxlen)
+	std::string::size_type maxlen)
 {
 	if (str.length() <= maxlen)
 		return (str);
