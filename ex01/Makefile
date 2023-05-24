@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME		= phonebook
-CC			= c++
+CC			= g++
 RM			= rm -rf
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
