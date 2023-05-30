@@ -24,19 +24,19 @@ std::string Contact::truncateString(std::string str,
 void Contact::getContactInfo(int index)
 {
 	std::cout << std::setw(10) << index << "|";
-	std::cout << std::setw(10) << truncateString(FirstName, 10) << "|";
-	std::cout << std::setw(10) << truncateString(LastName, 10) << "|";
-	std::cout << std::setw(10) << truncateString(NickName,10) << "|" 
+	std::cout << std::setw(10) << truncateString(_firstName, 10) << "|";
+	std::cout << std::setw(10) << truncateString(_lastName, 10) << "|";
+	std::cout << std::setw(10) << truncateString(_nickName,10) << "|" 
 		<< std::endl;
 }
 
 void Contact::getContactDetail()
 {
-	std::cout << "| " << "Firstname " << FirstName << " |" << std::endl;
-	std::cout << "| " << "Firstname " << FirstName << " |" << std::endl;
-	std::cout << "| " << "Lastname " << LastName << " |" << std::endl;
-	std::cout << "| " << "Nickname " << NickName << " |" << std::endl;
-	std::cout << "| " << "Phonenumber " << PhoneNumber << " |" << std::endl;
-	std::cout << "| " << "Darkestsecret " << DarkestSecret << " |" 
+	std::cout << "| " << "Firstname " << _firstName << " |" << std::endl;
+	std::cout << "| " << "Firstname " << _firstName << " |" << std::endl;
+	std::cout << "| " << "Lastname " << _lastName << " |" << std::endl;
+	std::cout << "| " << "Nickname " << _nickName << " |" << std::endl;
+	std::cout << "| " << "Phonenumber " << _phoneNumber << " |" << std::endl;
+	std::cout << "| " << "Darkestsecret " << _darkestSecret << " |" 
 		<< std::endl;
 }

@@ -19,21 +19,21 @@
 class Contact
 {
   private:
-	std::string FirstName;
-	std::string LastName;
-	std::string NickName;
-	std::string PhoneNumber;
-	std::string DarkestSecret;
+	std::string _firstName;
+	std::string _lastName;
+	std::string _nickName;
+	std::string _phoneNumber;
+	std::string _darkestSecret;
 
   public:
 	Contact(std::string firstName, std::string lastName, std::string nickName,
 			std::string phoneNumber, std::string darkestSecret)
 	{
-		this->FirstName = firstName;
-		this->LastName = lastName;
-		this->NickName = nickName;
-		this->PhoneNumber = phoneNumber;
-		this->DarkestSecret = darkestSecret;
+		this->_firstName = firstName;
+		this->_lastName = lastName;
+		this->_nickName = nickName;
+		this->_phoneNumber = phoneNumber;
+		this->_darkestSecret = darkestSecret;
 	};
 
 	void getContactInfo(int index);
